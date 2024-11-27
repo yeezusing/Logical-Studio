@@ -1,0 +1,696 @@
+@charset "utf-8";
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	background-color: #ffffff;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+#contenedor {
+    width: 100vw;
+    height: 350vh;
+    
+}
+
+
+
+.up {
+	width: 100%;
+	position: fixed;           
+	align-items: center;          
+    justify-content: center;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    overflow: hidden;  
+    white-space: nowrap;
+	background-color:#000000;
+}
+
+.ticker__list {
+    display: flex;
+    animation: ticker 27s linear infinite; 
+    margin: 0; 
+    padding: 0;
+	list-style-type: none;
+}
+
+.ticker__item {
+    padding-right: 7vw;
+	font-family: "Urbanist", sans-serif;
+	font-size: 0.9rem;
+	font-weight:medium;
+}
+#custom-cursor {
+    width: 0px;
+    height: 0px;
+    background-color: black; /* Color del cursor */
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: transform 0.1s ease-out, opacity 0.2s ease-out;
+}
+
+/* Rastro del cursor */
+#custom-cursor-trail {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Más transparente */
+    border-radius: 70%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-90%, -90%);
+    z-index: 9998;
+    transition: transform 5s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.4s ease-out;
+}
+
+
+@keyframes ticker {
+    0% {
+        transform: translateX(2%);
+    }
+    100% {
+        transform: translateX(-154%);
+    }
+}
+
+header {
+    width: 100%;
+    height: 6vh;
+    margin-top: 2.5vh;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: space-between; /* Distribuye logc y nav a extremos opuestos */
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 0 1vw; /* Espaciado lateral para ambos extremos */
+	background-color: transparent;
+}
+nav {
+	background-color: transparent!important;
+}
+
+#logc {
+    flex-shrink: 0; /* Evita que el logotipo se reduzca */
+	padding-left: 0.5vw;
+	background-color: transparent!important;
+	
+}
+
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end; /* Alinea los elementos del nav a la derecha */
+    margin: 0; /* Elimina márgenes */
+    padding: 0; /* Elimina padding */
+	background-color: transparent;
+}
+
+nav ul li {
+    margin-right: 0.1vw;
+	background-color: transparent;
+	transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+    font-family: "Urbanist", sans-serif;
+    font-size: 1.5rem;
+    padding-right: 2vw;
+	background-color: transparent;
+}
+nav ul li:hover {
+	color:#272727;
+    transform: scale(1.15); /* Opcional: un ligero agrandamiento para dar un efecto dinámico */
+}
+#sec-home  {
+    width: 100%;
+    height: 100vh;
+	position: relative;
+	transition: opacity 0.3s ease-in-out;
+	display: flex;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+#sec-home img {
+	width: 42vw;
+	height: auto;
+	position: fixed;
+	padding-left: 2vw;
+ opacity: 0.9;
+    bottom: -57vh;
+	opacity: 0.9;
+	overflow-x: hidden;
+}
+
+.text-container {
+	bottom: -74vh;
+    margin-left: 46vw; /* Espacio para que quede al lado de la imagen */
+    position: relative; /* No está fijo */
+    z-index: 1; /* Asegura que esté encima del fondo */
+	background-color: transparent;
+}
+
+.text-container p {
+    font-size: 2.3rem;
+    font-family: "Urbanist", sans-serif;
+	font-weight: normal; 
+    line-height: 2.2rem;
+	max-width: 35vw;
+	background-color: transparent;
+}
+#sec-home #giff {
+	width: 35vw; /* Ajusta el tamaño según sea necesario */
+    height: auto;
+    position: absolute;
+    right: -15vw; /* Coloca el GIF en la parte media derecha */
+    top: 40%; /* Centrado verticalmente */
+    transform: translateY(-50%); /* Ajusta para un perfecto centrado vertical */
+    opacity: 0.3;
+	
+}
+#contenedor #fon {
+	width: 42vw;
+	height: auto;
+	position: fixed;
+	padding-left: 2vw;
+    bottom: 0.6vh;
+	opacity: 0.9;
+	background-color: transparent;
+}
+
+/* sec-2 */
+#sec-2 {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.01);
+    display: flex;
+	position: relative;
+}
+
+.text-container-sec2 {
+	background-color: transparent !important;
+    position: relative;
+    bottom: -8vh; /* Ajusta según tu diseño */
+    left: 4.5vw;
+	font-size: 1.5rem;
+    font-family: "Urbanist", sans-serif;
+	max-width: 20vw;
+}
+
+.text-container-sec2 #uno {
+    font-size: 7rem;
+    font-family: "Urbanist", sans-serif;
+    font-weight: bolder;
+	letter-spacing: -0.05em;
+    background-color: transparent;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Lento al entrar y salir */
+    transform: translateY(100%); /* Comienza fuera de la pantalla hacia abajo */
+    opacity: 0;
+}
+
+.text-container-sec2 #uno.show {
+    transform: translateY(0); /* Vuelve a su posición */
+    opacity: 1;
+}
+.text-container-sec2 #portafoliotexto {
+    font-size: 1.5rem; /* Ajusta el tamaño del texto según sea necesario */
+    font-family: "Urbanist", sans-serif;
+    background-color: transparent !important;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    transform: translateY(100%); /* Empieza fuera de la pantalla */
+    opacity: 0; /* Comienza oculto */
+}
+
+.text-container-sec2 #portafoliotexto.show {
+    transform: translateY(0); /* Vuelve a su posición */
+    opacity: 1; /* Se hace visible */
+}
+#sec-2 #store {
+	position: relative;
+    bottom: -25vh; /* Ajusta según tu diseño */
+    left: 30vw;
+	transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transform: translateY(50px); /* Comienza desde abajo */
+	cursor: pointer;
+}
+/* Estilo de la ventana emergente */
+.popup {
+    display: none; /* Oculta la ventana por defecto */
+    position: fixed; /* Fija la ventana en la pantalla */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+}
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    text-align: center;
+    max-width: 950px;
+}
+
+.popup-content h2 {
+    font-size: 4rem;
+    font-family: "Urbanist", sans-serif;
+    margin-bottom: 20px;
+	letter-spacing: -0.05em;
+}
+
+.popup-content p {
+    font-size: 1.5rem;
+    font-family: "Urbanist", sans-serif;
+    color: #333;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+		
+	#contenedor #sec-2 #textoproyectos {
+	width: 10vw;
+	height: 4vh;
+	position: relative;
+	top: 68vh;
+    left: 13.5vw;
+	color: black;
+	font-size: 2.3rem;
+    font-family: "Urbanist", sans-serif;
+	background-color: transparent !important;
+	opacity: 0;
+    transform: translateY(40px);  /* Lo desplazamos ligeramente hacia abajo al principio */
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+#contenedor #sec-2 #textoproyectos.show {
+    transform: translateY(0);  /* Vuelve a su posición original */
+    opacity: 1;  /* Se hace visible */
+}
+#contenedor #sec-2 #textoproyectos:hover {
+	color:#272727;
+    transform: scale(0.97); /* Opcional: un ligero agrandamiento para dar un efecto dinámico */
+}
+
+#contenedor #sec-2 #textoasesoria {
+	width: 10vw;
+	height: 4vh;
+	position: relative;
+	top: 49vh;
+    left: 28vw;
+	color: black;
+	font-size: 2.3rem;
+    font-family: "Urbanist", sans-serif;
+	background-color: transparent !important;
+	opacity: 1;
+    
+}
+
+
+#sec-2 #asesoriaimg {
+	position: relative;
+    bottom: -55vh; /* Ajusta según tu diseño */
+    left: 18vw;
+	transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transform: translateY(50px); /* Comienza desde abajo */	
+}
+
+
+/* Estilo de la ventana emergente */
+.popup2 {
+    display: none; /* Oculta la ventana por defecto */
+    position: fixed; /* Fija la ventana en la pantalla */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+}
+.popup-content2 {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    text-align: center;
+    max-width: 950px;
+}
+
+.popup-content2 h2 {
+    font-size: 4rem;
+    font-family: "Urbanist", sans-serif;
+    margin-bottom: 20px;
+	letter-spacing: -0.05em;
+}
+
+.popup-content2 p {
+    font-size: 1.5rem;
+    font-family: "Urbanist", sans-serif;
+    color: #333;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+#store:hover, #asesoriaimg:hover {
+    filter: brightness(0.7); /* Reduce un poco el brillo para que parezca opaco */
+    transform: scale(2); /* Opcional: un ligero agrandamiento para dar un efecto dinámico */
+	
+}
+
+
+/* sec-3 */
+#sec-3 {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.02);
+    display: flex;
+}
+
+.text-container-sec3 {
+    background-color: transparent !important;
+    position: relative;
+    bottom: -8vh; /* Ajusta según tu diseño */
+    left: 4.5vw;
+    font-size: 1.5rem;
+    font-family: "Urbanist", sans-serif;
+    max-width: 20vw;
+}
+
+.text-container-sec3 #tres {
+    font-size: 7rem;
+    font-family: "Urbanist", sans-serif;
+    font-weight: bolder;
+    letter-spacing: -0.05em;
+    background-color: transparent;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Animación lenta */
+    transform: translateY(100%); /* Comienza fuera de la pantalla */
+    opacity: 0; /* Comienza oculto */
+}
+
+.text-container-sec3 #tres.show {
+    transform: translateY(0); /* Posición final */
+    opacity: 1; /* Visible */
+}
+
+.text-container-sec3 #nosotrostexto {
+    font-size: 1.5rem;
+    font-family: "Urbanist", sans-serif;
+    background-color: transparent !important;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Animación lenta */
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.text-container-sec3 #nosotrostexto.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+.video-container {
+  position: relative;
+  width: 624px; /* Ancho de la imagen */
+  height: 351px; /* Alto de la imagen */
+  margin-left: 34vw; /* Centra horizontalmente el contenedor */
+  margin-top: 39vh;
+  display: block;
+  transition: transform 0.5s ease-in-out;
+  z-index: 1000;
+}
+
+#portadavdo {
+  width: 100%; /* Asegura que la imagen se ajuste al contenedor */
+  height: 100%; /* Asegura que la imagen se ajuste al contenedor */
+  display: block; /* Evita comportamientos inesperados */
+  transition: transform 0.5s ease-in-out;
+}
+
+.play-button {
+  position: absolute; /* Se posiciona relativo al contenedor */
+  top: 50%; /* Centra verticalmente */
+  left: 50%; /* Centra horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta el centro exacto */
+  width: 60px; /* Tamaño del botón */
+  height: 60px;
+  background-color: rgba(255,255,255,0.2); /* Fondo semitransparente */
+  border: none; /* Sin bordes */
+  border-radius: 50%; /* Botón redondo */
+  cursor: pointer;
+  z-index: 2; /* Asegura que quede por encima de la imagen */
+  transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 15px solid white;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+/* Animación al pasar el cursor */
+.video-container:hover {
+  transform: scale(1.03); /* Efecto de agrandamiento para el contenedor */
+}
+
+.video-container:hover #portadavdo {
+  transform: scale(0.95); /* Efecto de agrandamiento para la imagen */
+}
+
+.video-container:hover .play-button {
+  transform: translate(-50%, -50%) scale(1.1); /* Botón ligeramente más grande */
+  background-color: rgba(255,255,255,0.3); /* Fondo del botón más oscuro */
+}
+
+/* Estilos del modal */
+.modal {
+  display: none; /* Oculto inicialmente */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos del modal */
+.modal {
+  display: none; /* Oculto inicialmente */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo más oscuro */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor del contenido del modal */
+.modal-content {
+  position: relative;
+  background-color: transparent; /* Sin fondo */
+  padding: 0; /* Sin espacio alrededor */
+  border: none; /* Sin bordes */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Video dentro del modal */
+.modal video {
+  display: block;
+  width: 65%; /* Limita el tamaño máximo al 90% del ancho de la pantalla */
+  height: 65%; /* Limita el tamaño máximo al 90% del alto de la pantalla */
+  border: none; /* Sin borde */
+}
+
+/* Botón para cerrar el modal */
+.close-button {
+  position: absolute;
+  top: 2px;
+  right: 15vw;
+  font-size: 2rem; /* Botón más grande */
+  font-weight: bold;
+  cursor: pointer;
+  color: white; /* Cambia el color del botón a blanco */
+  background: rgba(255,255,255,0.2); /* Fondo oscuro con transparencia */
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.close-button:hover {
+  transform: scale(1.2); /* Efecto al pasar el cursor */
+}
+
+
+.video-container.inactive {
+  opacity: 0;
+  transform: translateY(50px); /* Hace que el contenedor comience fuera de la vista */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.video-container.show {
+  opacity: 1;
+  transform: translateY(0); /* Cuando está en vista, vuelve a su posición original */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.play-button.inactive {
+  opacity: 0;
+  transform: scale(0.8); /* Hace que el botón sea pequeño y transparente */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.play-button.show {
+  opacity: 1;
+  transform: scale(1); /* El botón vuelve a su tamaño original */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+#contenedor #sec-3 .video-container #textonosotros-2 {
+    width: auto;
+    height: auto;
+    position:inherit;
+    top: -7vh;
+    left: 11vw;
+    color: black;
+    font-size: 2.5rem;
+    font-family: "Urbanist", sans-serif;
+    background-color: transparent !important;
+    opacity: 1; /* Empieza invisible */
+    transform: translateY(40px);  /* Empieza desplazado */
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Transición suave */
+	z-index: 2000;
+}
+
+#contenedor #sec-3 .video-container #textonosotros-2.show {
+    transform: translateY(0);  /* Vuelve a su posición original */
+    opacity: 1;  /* Se hace visible */
+}
+
+#contenedor .video-container #sec-3 #textonosotros-2:hover {
+    color: #272727;
+    transform: scale(0.97); /* Efecto de agrandamiento */
+}
+
+
+
+body footer {
+	width: 100%;
+    height: 50vh;
+	background-color: rgba(0, 0, 0, 2);
+	display: flex;
+	
+}
+
+
+#contenedor footer #footerimage {
+    position: relative;
+    width: 42vw;
+    height: 41.8vh;
+    padding-left: 2vw;
+	bottom: -4.1vh;
+    opacity: 0; /* Comienza oculto */
+    background-color: transparent !important;
+    transition: opacity ease; /* Se usará transición controlada por JavaScript */
+	
+}
+
+/* Cuando la imagen entra en el viewport */
+#contenedor footer #footerimage.visible {
+    opacity: 1; /* Aparece */
+}
+
+.text-footer {
+    height: 35vh;
+    color: #FFFFFF;
+    background-color: transparent !important;
+    position: relative;
+    bottom: -4.4vh; /* Ajusta según tu diseño */
+    left: 4.5vw;
+    font-size: 1.2rem;
+    font-family: "Urbanist", sans-serif;
+    max-width: auto;
+    opacity: 0; /* Inicia oculto */
+    transform: translateY(20px); /* Desplazamiento inicial */
+    transition: opacity 5s ease-in-out, transform 1s ease-in-out; /* Suaviza la animación */
+}
+
+.text-footer.visible {
+    opacity: 1; /* Aparece */
+    transform: translateY(0); /* Vuelve a su posición original */
+}
+
+.text-footer.hidden {
+    opacity: 0; /* Desaparece */
+    transform: translateY(20px); /* Vuelve a desplazarse */
+}
+
+/* Estilos de contenido */
+footer .text-footer #f-1 {
+    font-size: 1.5rem;
+    background-color: transparent !important;
+    text-decoration: none !important;
+    margin-top: 24vh;
+}
+
+.text-footer #f-1 a {
+    color: #FFFFFF;
+    text-decoration: none;
+    background-color: transparent !important;
+}
+
+.text-footer #f-1 a:hover {
+    color: #6E6E6E;
+    background-color: transparent !important;
+}
+
+footer .text-footer #f-2 {
+    font-size: 1.5rem;
+    background-color: transparent !important;
+}
+
+footer .text-footer #f-3 {
+    font-size: 1.2rem;
+    background-color: transparent !important;
+    margin-top: 2vh;
+}
+
